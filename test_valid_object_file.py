@@ -1,7 +1,3 @@
-from __future__ import print_function, division
-
-from exceptions import Exception
-
 from astropy.table import Table
 from astropy.coordinates import SkyCoord
 from astropy.coordinates.name_resolve import NameResolveError
@@ -57,7 +53,7 @@ def test_table_can_be_read_and_coords_good():
             failures[object_name] = CoordinateMismatchError
 
     real_failures = {}
-    for name, fail in failures.iteritems():
+    for name, fail in failures.items():
         try:
             assert ALLOWED_FAILURES[name] == fail
         except (KeyError, AssertionError):
