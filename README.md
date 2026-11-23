@@ -1,48 +1,18 @@
 Objects observed at Feder Observatory
 =====================================
 
-[![Build Status](https://travis-ci.org/mwcraig/feder-object-list.png?branch=master)](https://travis-ci.org/mwcraig/feder-object-list)
+**This list has moved.** Since November 2026 the list of objects observed at
+the Feder Observatory is kept in the
+[acp-plans](https://github.com/feder-observatory/acp-plans) repository:
 
-The file ``feder_object_list.csv`` in this repository contains the object name,
-RA and Dec of objects observed at the Feder Observatory. It is used to add
-object names to images during header processing.
++ View the list:
+  https://github.com/feder-observatory/acp-plans/blob/main/feder_object_list.csv
++ Use it in header processing:
+  ``https://raw.githubusercontent.com/feder-observatory/acp-plans/main/feder_object_list.csv``
 
-View/edit the list of objects
-=============================
+To add an object, edit ``feder_object_list.csv`` in acp-plans. The check that
+runs on each pull request of observing plans there reports any target that is
+missing from the list and gives the line to add.
 
-Click on the file name in the list above. If you want to edit the object list to
-add an object, click the "Edit" button above the list of objects.
-
-Use this object list in header processing
-=========================================
-
-The scripts/functions for adding object names in header processing have a way of
-specifying the name of the object list. Use this name to use the latest version
-of the list here:
-``https://raw.github.com/mwcraig/feder-object-list/master/feder_object_list.csv``
-
-For maintainers of this list
-============================
-
-Please do not merge pull requests until the Travis build reports the pull
-request passes. The check on Travis will:
-
-+ Make sure the object file is readable as an Astropy table. Attempt to verify
-+ the RA/Dec specified for the object by looking up the object position in
-  Simbad.
-
-If the travis build fails click on the fail message in the pull request, which
-will take you to the log of the travis build. Then:
-
-+ If the error is a timeout try re-running the build (simbad may be down).
-+ If the log reports that the position given for the object doesn't match the
-  simbad position, verify the position in simbad.
-+ If the position is really incorrect ask the person who made the pull request
-  to fix it.
-
-Limitations of this automated checking
---------------------------------------
-
-If the name isn't recognized by simbad the checker skips over it. There are some
-objects (e.g. MU Vul) that simbad should recognize, but doesn't, and others
-(e.g. sa104) that are standard star fields not list as names in simbad.
+This repository is archived. The copy of ``feder_object_list.csv`` here is no
+longer updated; do not use it.
